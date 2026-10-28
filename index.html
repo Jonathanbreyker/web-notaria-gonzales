@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Notaría - Cesar Gonzales</title>
         <link rel="stylesheet" href="styles.css" />
-        
+        <!-- Iconos sugeridos (FontAwesome u opcionales) -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body>
-        
+        <!-- NAVEGACIÓN / ENCABEZADO -->
         <header class="header">
             <div class="container navbar">
                 <div class="logo">
@@ -20,7 +20,6 @@
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <!--<li><a href="#tramites">Trámites en Línea</a></li>-->
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
@@ -28,8 +27,10 @@
         </header>
         <div class="contenido-desvanecido">
             
-            <section id="inicio" class="hero">
-                <div class="hero-content">
+            <!-- SECCIÓN PRINCIPAL / BANNER -->
+            <section id="inicio" class="hero reveal">
+                <!-- CARRUSEL DE FONDOS -->
+                <div class="hero-content reveal">
                     <h1>Seguridad Jurídica y Confianza a su Servicio</h1>
                     <p>Brindamos asesoría notarial integral con eficiencia, rapidez y estricto apego a la ley.</p>
                     <div class="hero-buttons">
@@ -39,14 +40,14 @@
                 </div>
             </section>
 
-            
+            <!-- SECCIÓN NOSOTROS -->
             <section id="nosotros" class="section container">
-                <div class="section-title">
+                <div class="section-title reveal">
                     <h2>Sobre la Notaría</h2>
                     <hr />
                 </div>
-                <div class="about-grid">
-                    <div class="about-text">
+                <div class="about-grid reveal">
+                    <div class="about-text reveal">
                         <h3>Dr. Cesar A. Gonzales Caceres</h3>
                         <p>Notario Público de Macusani-Carabaya-Puno.</p>
                         <p style="text-align: justify">
@@ -81,16 +82,16 @@
                 </div>
             </section>
 
-            
+            <!-- SECCIÓN SERVICIOS -->
             <section id="servicios" class="section bg-light">
-                <div class="container">
+                <div class="container reveal">
                     <div class="section-title">
                         <h2>Servicios Notariales</h2>
                         <hr />
                     </div>
                     <div class="services-grid">
-                        
-                        <div class="card">
+                        <!-- Servicio 1 -->
+                        <div class="card reveal">
                             <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
                             <h3>Asuntos Protocolares</h3>
                             <p>
@@ -100,7 +101,8 @@
                             </p>
                         </div>
 
-                        <div class="card">
+                        <!-- Servicio 2 -->
+                        <div class="card reveal">
                             <div class="card-icon"><i class="fa-solid fa-stamp"></i></div>
                             <h3>Asuntos Extraprotocolares</h3>
                             <p>
@@ -110,8 +112,8 @@
                             </p>
                         </div>
 
-                       
-                        <div class="card">
+                        <!-- Servicio 3 -->
+                        <div class="card reveal">
                             <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
                             <h3>Asuntos No Contenciosos</h3>
                             <p>
@@ -120,8 +122,8 @@
                             </p>
                         </div>
 
-                        
-                        <div class="card">
+                        <!-- Servicio 4 -->
+                        <div class="card reveal">
                             <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
                             <h3>Tramites Juridicos</h3>
                             <p>
@@ -133,15 +135,16 @@
                 </div>
             </section>
 
-        
+          
+            <!-- SECCIÓN CONTACTO / UBICACIÓN -->
             <section id="contacto" class="section bg-contacto">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title reveal">
                         <h2>Contacto e Informes</h2>
                         <hr />
                     </div>
-                    <div class="contact-grid">
-                        <div class="contact-info">
+                    <div class="contact-grid reveal">
+                        <div class="contact-info reveal">
                             <h3>Ubicación y Atención</h3>
                             <p>
                                 <i class="fa-solid fa-location-dot"></i> <strong>Dirección:</strong> Jr. Grau 404 Barrio
@@ -156,9 +159,32 @@
                                 <i class="fa-solid fa-clock"></i> <strong>Horario:</strong> Lunes a Viernes de 8:00 am a
                                 5:00 pm
                             </p>
+                            <!-- BLOQUE DE REDES SOCIALES NUEVO -->
+                                <div class="social-links reveal">
+                                    <!--<p><strong>Síganos en:</strong></p>-->
+                                    <div class="social-icons">
+                                        <a href="https://facebook.com/notariagonzalescaceres" target="_blank" class="social-icon facebook" title="Facebook">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        
+                                        </a>
+                                        <a href="https://wa.me/51990884040" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                                            <i class="fa-brands fa-whatsapp"></i>   
+                                        </a>    
+                                        
+                                            <!-- Instagram -->
+                                        <a href="https://facebook.com/notariagonzalescaceres" target="_blank" class="social-icon instagram" title="Instagram">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <!-- TikTok -->
+                                        <a href="https://facebook.com/notariagonzalescaceres" target="_blank" class="social-icon tiktok" title="TikTok">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </a>
+                                        <!-- Puedes agregar más redes aquí si lo deseas -->
+                                    </div>
+                                </div>
                         </div>
 
-                            <div class="contact-form">
+                            <div class="contact-form reveal">
                                 <h3>Envíenos un mensaje</h3>
                                 <form id="whatsapp-form">
                                 <input type="text" id="nombre" placeholder="Nombre completo" required>
@@ -174,7 +200,7 @@
                 </div>
             </section>
 
-           
+            <!-- PIE DE PÁGINA -->
             <footer class="footer">
                 <div class="container footer-content">
                     <p>&copy; 2026 Notaría Cesar Gonzales Caceres. Todos los derechos reservados.</p>
@@ -182,7 +208,7 @@
             </footer>
         </div>
         
-       
+        <!-- VÍNCULO A TU ARCHIVO JAVASCRIPT EXTERNO -->
     <script src="script.js"></script>
         
     </body>
