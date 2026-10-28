@@ -455,4 +455,12 @@ body {
     opacity: 1;                              /* Totalmente visible */
     transform: translateY(0);                /* Regresa a su posición original */
 }
+/* --- RECUPERAR EFECTO HOVER EN LAS TARJETAS --- */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
 
+.card:hover {
+    transform: translateY(-7px); /* Eleva la tarjeta 7 píxeles al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra elegante opcional al elevarse */
+}
