@@ -32,3 +32,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+/* --- SCRIPT PARA EL EFECTO DE REVELADO AL HACER SCROLL --- */
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Seleccionamos todos los elementos que tengan la clase 'reveal'
+    const elementosRevelar = document.querySelectorAll('.reveal');
+
+    // Opciones del observador
+    const opcionesObservador = {
+        root: null,       // Usa la ventana del navegador como área de referencia
+        rootMargin: '0px',
+        threshold: 0.15   // Se activa cuando el 15% del elemento es visible en pantalla
+    };
+
+    // Creamos el observador de intersección
+    const observador = new IntersectionObserver(function(entradas, observador) {
+        entradas.forEach(entrada => {
+            // Verificamos si el elemento ya es visible en la pantalla
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('active'); // Añade la clase que ejecuta la animación CSS
+                
+                // Opcional: Si quieres que la animación ocurra solo la primera vez que bajas, 
+                // descomenta la siguiente línea:
+                // observador.unobserve(entrada.target);
+            }
+        });
+    }, opcionesObservador);
+
+    // Ponemos a "vigilar" cada uno de los elementos seleccionados
+    elementosRevelar.forEach(elemento => {
+        observador.observe(elemento);
+    });
+});
