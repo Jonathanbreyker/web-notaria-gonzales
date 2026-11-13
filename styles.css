@@ -10,6 +10,7 @@ body {
     color: #333;
     line-height: 1.6;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 .container {
@@ -99,18 +100,11 @@ body {
     color: #c59b27;
 }
 
-/*.nav-menu {
+.nav-menu {
     display: flex;
     list-style: none;
     align-items: center; /* Centra verticalmente los enlaces y el botón */
-/*gap: 5px; /* Espacio prudente entre los ítems del menú */
-/*}*/
-.navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 15px;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 5px; /* Espacio prudente entre los ítems del menú */
 }
 
 .nav-menu li a {
@@ -132,6 +126,7 @@ body {
         linear-gradient(rgba(40, 34, 37, 0.9), rgba(40, 34, 37, 0.9)),
         url("imagenes/fachadanotaria1.jpeg") center center / 100% no-repeat;
 
+    
     height: 115vh;
     display: flex;
     align-items: center;
@@ -240,16 +235,6 @@ body {
 .btn-cita:hover::before {
     left: 100%;
 }
-/* 3. CORRECCIÓN CLAVE PARA EL BOTÓN DE CITA EN MÓVIL */
-    .nav-item-btn, 
-    .btn-cita {
-        width: 100%;                  /* Hace que ocupe de forma ordenada el ancho disponible */
-        max-width: 280px;             /* Evita que crezca demasiado y se vea elegante */
-        margin-left: 0 !important;    /* Elimina el margen izquierdo de la PC que empujaba todo */
-        box-sizing: border-box;
-        text-align: center;
-    }
-
 .btn-primary {
     background-color: #c59b27;
     color: #ffffff;
@@ -431,9 +416,6 @@ body {
     .navbar {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 15px;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .about-grid,
@@ -449,7 +431,6 @@ body {
         width: 100%;
     }
 }
-s
 
 /* Efecto de aparición de toda la página */
 .contenido-desvanecido {
