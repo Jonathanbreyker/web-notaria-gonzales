@@ -602,16 +602,40 @@ body {
 }
 
 /* --- ADAPTABILIDAD PARA MÓVILES (CON MÁRGENES LATERALES PROFESIONALES) --- */
+/* --- ADAPTABILIDAD PARA MÓVILES (CON MÁRGENES LATERALES PROFESIONALES) --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 15px;
         padding: 15px 15px; /* Margen seguro para el menú en celular */
+        width: 100%;
+        box-sizing: border-box; /* Evita que el padding ensanche la barra de más */
+    }
+
+    /* Asegura que el menú móvil tampoco rebase el ancho de la pantalla */
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* CORRECCIÓN PUNTUAL PARA EL BOTÓN DE CITA EN CELULAR */
+    .nav-item-btn, 
+    .btn-cita {
+        width: 100%;
+        max-width: 280px;
+        margin-left: 0 !important; /* Elimina el margen izquierdo de la PC que lo tiraba a la derecha */
+        box-sizing: border-box;
+        text-align: center;
     }
 
     /* Contenedor general para que NINGUNA sección toque los bordes de la pantalla del celular */
     .container {
         padding: 0 18px; /* Deja un respiro elegante a los lados */
+        box-sizing: border-box;
     }
 
     .about-grid,
