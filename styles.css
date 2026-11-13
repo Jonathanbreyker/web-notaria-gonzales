@@ -602,26 +602,90 @@ body {
 }
 
 /* --- ADAPTABILIDAD PARA MÓVILES (CON MÁRGENES LATERALES PROFESIONALES) --- */
-/* --- ADAPTABILIDAD PARA MÓVILES (CON MÁRGENES LATERALES PROFESIONALES) --- */
+//* --- ADAPTABILIDAD PARA MÓVILES (MENÚ HORIZONTAL DESLIZABLE Y BOTÓN FIJO VISIBLE) --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 1px;
-        padding: 15px 15px; /* Margen seguro para el menú en celular */
+        display: flex;
+        flex-direction: row;           /* Mantiene el logo y el menú en fila horizontal */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
         width: 100%;
-        box-sizing: border-box; /* Evita que el padding ensanche la barra de más */
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    /* Asegura que el menú móvil tampoco rebase el ancho de la pantalla */
+    /* Contenedor del menú con scroll horizontal táctil y sin barra fea */
     .nav-menu {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        gap: 10px;
-        padding: 0;
+        display: flex;
+        flex-direction: row;           /* Fuerza los enlaces en fila horizontal */
+        flex-wrap: nowrap;             /* Evita que bajen a la siguiente línea */
+        gap: 8px;
+        overflow-x: auto;              /* Permite deslizar con el dedo lateralmente */
+        white-space: nowrap;           /* Evita que los textos de los enlaces se corten */
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;         /* Oculta la barra de scroll en Firefox */
+    }
+
+    /* Oculta la barra de scroll en Chrome, Safari y Edge */
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Estilo compacto para los enlaces del menú móvil */
+    .nav-menu li a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* 
+       ESTRATEGIA PARA EL BOTÓN DE CITA: 
+       Lo sacamos del flujo del scroll horizontal o lo dejamos al final 
+       con un pequeño margen para que destaque e invite a hacer clic siempre. 
+    */
+    .nav-item-btn {
+        flex-shrink: 0;                /* Evita que el botón se comprima o deforme */
+        margin-left: 5px !important;
+    }
+
+    .btn-cita {
+        padding: 8px 14px;             /* Más compacto para que quepa en la barra superior */
+        font-size: 0.82rem;
+        white-space: nowrap;
+        box-sizing: border-box;
+        margin-left: 0 !important;
+    }
+
+    /* Margen de seguridad general en contenedores para celulares */
+    .container {
+        padding: 0 18px;
         box-sizing: border-box;
     }
 
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .carousel-container-facade {
+        height: 280px;
+        border-radius: 10px;
+    }
+
+    .carousel-caption-fixed {
+        width: 90%;
+    }
+
+    .carousel-caption-fixed h2 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-caption-fixed p {
+        font-size: 0.9rem;
+    }
+}
     /* CORRECCIÓN PUNTUAL PARA EL BOTÓN DE CITA EN CELULAR */
     .nav-item-btn, 
     .btn-cita {
