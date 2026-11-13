@@ -3,24 +3,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     color: #333;
     line-height: 1.6;
-    background-color: rgba(164, 164, 164, 0.25);;
+    background-color: #ffffff;
 }
 
 .container {
-        max-width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .section {
     padding: 30px 0;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: #ffffff;
 }
 
 .bg-light {
@@ -59,13 +59,13 @@ body {
         width: 300px; /* Se queda fija y visible durante el 60% del tiempo */
     }
     100% {
-        width: 1px;  /* Se reduce al final */
+        width: 1px; /* Se reduce al final */
     }
 }
 .section-title hr {
     /*width: 60px;*/
     height: 5px;
-    background-color: #c59b27; /* Detalle dorado/elegante */
+    background: linear-gradient(90deg, #c59b27, #f3d06c); /* Detalle dorado/elegante */
     border: none;
     margin: 5px auto 0;
     animation: barWidth 11s ease-in-out infinite;
@@ -78,7 +78,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 20px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -102,6 +102,8 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
+    align-items: center; /* Centra verticalmente los enlaces y el botón */
+    gap: 5px; /* Espacio prudente entre los ítems del menú */
 }
 
 .nav-menu li a {
@@ -119,13 +121,12 @@ body {
 
 /* HERO / BANNER PRINCIPAL */
 .hero {
-    background: linear-gradient(
-        rgba(40, 34, 37, 0.9),
-        rgba(40, 34, 37, 0.9)
-    ),
-    url('imagenes/logo.jpg') center center / 90% no-repeat;
+    background:
+        linear-gradient(rgba(40, 34, 37, 0.9), rgba(40, 34, 37, 0.9)),
+        url("imagenes/fachadanotaria1.jpeg") center center / 100% no-repeat;
 
-    height: 60vh;
+    
+    height: 115vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,7 +136,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin-bottom: 15px;
 }
 
@@ -150,8 +151,10 @@ body {
 /* BOTONES */
 .btn {
     display: inline-block;
+    align-items: center;
+    justify-content: center;
     padding: 12px 25px;
-    border-radius: 4px;
+    /*border-radius: 44px;*/
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -159,11 +162,82 @@ body {
     cursor: pointer;
 }
 
+/* --- BOTÓN INSTITUCIONAL DE ALTA GAMA (ESTILO METÁLICO DORADO) --- */
+/* --- BOTÓN DE CITA CON MÁXIMA LEGIBILIDAD Y CONTRASTE --- */
+.btn-cita {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 26px;
+
+    /* Fondo dorado metálico elegante */
+    background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #f3e5ab 100%);
+    color: #ffffff;
+
+    /* Borde metálico sutil */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700; /* Letras un poco más firmes (bold) */
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+
+    /* Sombra exterior y relieve interno */
+    box-shadow:
+        0 4px 15px rgba(184, 134, 11, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+    /* Transición suave sin vibración */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* MÁXIMA NITIDEZ: Sombra perimetral oscura muy precisa sobre el texto blanco */
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.75),
+        0 0 1px rgba(0, 0, 0, 0.8),
+        0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de brillo que cruza al pasar el cursor */
+.btn-cita::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: 0.5s;
+}
+
+/* Ícono de WhatsApp con sombra profunda y nítida */
+.btn-cita i {
+    font-size: 1.15rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.75));
+}
+
+/* EFECTO HOVER ESTABLE Y BRILLANTE */
+.btn-cita:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b8860b 100%);
+    box-shadow:
+        0 6px 22px rgba(212, 175, 55, 0.45),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transform: none; /* Cero vibración */
+}
+
+.btn-cita:hover::before {
+    left: 100%;
+}
 .btn-primary {
     background-color: #c59b27;
     color: #ffffff;
 }
-
 .btn-primary:hover {
     background-color: #a37f1e;
 }
@@ -210,53 +284,58 @@ body {
 .about-image {
     width: 100%;
     height: 550px;
-    overflow: hidden;        /* Recorta y oculta las fotos que están fuera de vista */
-    border-radius: 18px;     /* Redondea las esquinas de la ventana fija */
+    overflow: hidden; /* Recorta y oculta las fotos que están fuera de vista */
+    border-radius: 18px; /* Redondea las esquinas de la ventana fija */
     position: relative;
 }
 
 /* 2. RIELE INTERNO (Contiene las 4 fotos alineadas) */
 .slider-track {
-    display: flex;           /* Coloca las 4 fotos una al lado de la otra horizontalmente */
-    width: 400%;             /* 100% por cada una de las 4 imágenes (4 x 100% = 400%) */
+    display: flex; /* Coloca las 4 fotos una al lado de la otra horizontalmente */
+    width: 400%; /* 100% por cada una de las 4 imágenes (4 x 100% = 400%) */
     height: 100%;
-    
+
     /* Configuración de la animación continua */
     animation: carruselDesplazamiento 16s ease-in-out infinite;
 }
 
 /* 3. ESTILO DE CADA IMAGEN */
 .slider-track img {
-    width: 25%;              /* Cada foto ocupa el 25% del carril (25% de 400% = 100% de la pantalla) */
+    width: 25%; /* Cada foto ocupa el 25% del carril (25% de 400% = 100% de la pantalla) */
     height: 100%;
-    object-fit: cover;       /* Ajusta la foto sin deformar sus proporciones */
+    object-fit: cover; /* Ajusta la foto sin deformar sus proporciones */
     display: block;
 }
 
 /* 4. ANIMACIÓN DE DESPLAZAMIENTO PAUSADO */
 @keyframes carruselDesplazamiento {
     /* Muestra la Foto 1 */
-    0%, 20% {
+    0%,
+    20% {
         transform: translateX(0%);
     }
     /* Transición y pausa en la Foto 2 */
-    28%, 48% {
+    28%,
+    48% {
         transform: translateX(-25%);
     }
     /* Transición y pausa en la Foto 3 */
-    56%, 76% {
+    56%,
+    76% {
         transform: translateX(-50%);
     }
     /* Transición y pausa en la Foto 4 (copia de la Foto 1) */
-    84%, 96% {
+    84%,
+    96% {
         transform: translateX(-75%);
     }
     /* Reinicio instantáneo e imperceptible a la Foto 1 real */
     100% {
         transform: translateX(0%);
     }
-}.about-image:hover img {
-    transform: scale(1.15);   /* Se amplía un 15% */
+}
+.about-image:hover img {
+    transform: scale(1.15); /* Se amplía un 15% */
 }
 
 /* SERVICIOS */
@@ -270,7 +349,7 @@ body {
     background: #ffffff;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.3s;
 }
@@ -338,19 +417,18 @@ body {
         gap: 15px;
     }
 
-    .about-grid, .contact-grid {
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
-        
-            }
+    }
 
     .search-form {
         flex-direction: column;
-        
-            }
+    }
 
     .search-form input {
         width: 100%;
-        }
+    }
 }
 
 /* Efecto de aparición de toda la página */
@@ -372,11 +450,9 @@ body {
     }
 }
 
-
-
 /* --- ESTILOS PARA REDES SOCIALES --- */
 .social-links {
-        text-align: center;
+    text-align: center;
 }
 
 .social-links p {
@@ -403,8 +479,10 @@ body {
     color: #ffffff;
     font-size: 1.8em;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 /* Color y efecto para Facebook */
@@ -445,22 +523,264 @@ body {
 /* --- EFECTO DE REVELADO AL HACER SCROLL --- */
 /* 1. Estado inicial: Elemento oculto y desplazado hacia abajo */
 .reveal {
-    opacity: 0;                              /* Invisible inicialmente */
-    transform: translateY(40px);             /* Desplazado 40px hacia abajo */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición suave */
-    will-change: opacity, transform;         /* Optimiza el rendimiento del navegador */
+    opacity: 0; /* Invisible inicialmente */
+    transform: translateY(40px); /* Desplazado 40px hacia abajo */
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out; /* Transición suave */
+    will-change: opacity, transform; /* Optimiza el rendimiento del navegador */
 }
 /* 2. Estado final: Cuando entra en pantalla y se activa */
 .reveal.active {
-    opacity: 1;                              /* Totalmente visible */
-    transform: translateY(0);                /* Regresa a su posición original */
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Regresa a su posición original */
 }
+
 /* --- RECUPERAR EFECTO HOVER EN LAS TARJETAS --- */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease; /* Transición suave */
 }
 
 .card:hover {
     transform: translateY(-7px); /* Eleva la tarjeta 7 píxeles al pasar el cursor */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra elegante opcional al elevarse */
+}
+
+/* --- EFECTO DE LÍNEA DESLIZANTE EN LAS TARJETAS --- */
+
+/* 1. Aseguramos que la tarjeta sea el contenedor de referencia */
+.card {
+    position: relative;
+    overflow: hidden; /* Oculta la línea cuando está fuera de la tarjeta */
+}
+
+/* 2. Creamos la línea decorativa horizontal en la parte inferior */
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%; /* Empieza sin ancho */
+    height: 6px; /* Grosor de la línea */
+    background: linear-gradient(90deg, #c59b27, #f3d06c); /* Tono dorado brillante y elegante */
+    transition: width 0.4s ease-in-out; /* Velocidad de la animación horizontal */
+}
+
+/* 3. Al pasar el cursor, la línea se extiende de lado a lado (100%) */
+.card:hover::after {
+    width: 100%;
+}
+
+/* --- ESTILOS PARA EL BOTÓN DE REQUISITOS EN LAS TARJETAS --- */
+.card .btn-requisitos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background-color: #f8f9fa; /* Fondo sutil */
+    color: #c59b27; /* Texto con tu tono dorado institucional */
+    border: 1px solid #c59b27;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+}
+
+/* Efecto al pasar el cursor por el botón de requisitos */
+.card .btn-requisitos:hover {
+    background: linear-gradient(90deg, #c59b27, #f3d06c); /* Se vuelve dorado completo */
+    color: #ffffff; /* Texto blanco para contraste */
+    box-shadow: 0 4px 10px rgba(197, 155, 39, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- ADAPTABILIDAD PARA MÓVILES (CON MÁRGENES LATERALES PROFESIONALES) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 15px; /* Margen seguro para el menú en celular */
+    }
+
+    /* Contenedor general para que NINGUNA sección toque los bordes de la pantalla del celular */
+    .container {
+        padding: 0 18px; /* Deja un respiro elegante a los lados */
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Ajuste específico para que el carrusel de la fachada tampoco pegue en los extremos */
+    .carousel-container-facade {
+        height: 280px;
+        border-radius: 10px;
+    }
+
+    .carousel-caption-fixed {
+        width: 90%; /* Da un margen interno seguro para el texto del carrusel */
+    }
+
+    .carousel-caption-fixed h2 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-caption-fixed p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   GALERÍA HEXAGONAL DE ALTA GAMA (PANAL ENCASTRADO CON MARCO DORADO)
+   ========================================================================== */
+
+/* Contenedor principal que alinea las filas del panal en el centro */
+.honeycomb-grid {
+    display: flex;
+    flex-direction: column; /* Apila las filas verticalmente */
+    align-items: center; /* Centra horizontalmente todo el panal */
+    padding: 30px 10px 50px; /* Espacio superior e inferior para las sombras */
+}
+
+/* Cada fila horizontal de hexágonos */
+.honeycomb-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px; /* Separación milimétrica entre lados verticales */
+}
+
+/* Desplazamiento vertical negativo para que la fila inferior encastre en los ángulos de la superior */
+.honeycomb-row.row-offset {
+    margin-top: -52px; /* Sube la fila exactamente 1/4 de la altura del hexágono */
+}
+
+/* 1. CAPA EXTERIOR: Proyecta la sombra física real sin que clip-path la corte */
+.hex-wrapper {
+    width: 240px; /* Ancho regular equilibrado */
+    height: 276px; /* Alto proporcional (Ancho * 1.15) para hexágono regular */
+    filter: drop-shadow(0 12px 18px rgba(15, 34, 61, 0.18)); /* Sombra azul marino profunda y suave */
+    transition: filter 0.35s ease; /* Transición suave de sombra (sin mover posición = cero vibración) */
+    cursor: pointer;
+}
+
+/* 2. MARCO METÁLICO DORADO: Crea el borde tallado alrededor de la imagen */
+.hex-border {
+    width: 100%;
+    height: 100%;
+    padding: 5px; /* Define el grosor exacto del marco dorado (5px) */
+    background: linear-gradient(135deg, #b8860b 0%, #f3d06c 50%, #c59b27 100%); /* Gradiente oro pulido */
+    /* Recorte hexagonal perfecto mediante 6 vértices porcentuales */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: background 0.4s ease;
+}
+
+/* 3. CONTENEDOR INTERIOR DE LA FOTOGRAFÍA */
+.hex-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a365d; /* Color institucional mientras carga la imagen */
+    /* Mismo recorte hexagonal para encajar dentro del marco dorado */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Fotografía del establecimiento */
+.hex-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la foto sin deformar proporciones */
+    display: block;
+    filter: brightness(0.92); /* Atenúa levemente el brillo para dar sobriedad */
+    transition:
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        filter 0.4s ease;
+}
+
+/* 4. CORTINA DE TEXTO INSTITUCIONAL (Degradado inferior elegante) */
+.hex-caption {
+    position: absolute;
+    inset: 0; /* Cubre todo el interior del hexágono */
+    background: linear-gradient(
+        to top,
+        rgba(15, 34, 61, 0.92) 0%,
+        /* Azul institucional oscuro en la base para máxima lectura */ rgba(15, 34, 61, 0.35) 45%,
+        transparent 75%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ubica los textos en el triángulo inferior */
+    align-items: center;
+    padding-bottom: 34px; /* Evita que el texto toque la punta inferior del hexágono */
+    text-align: center;
+}
+
+/* Etiqueta pequeña dorada superior (Ej: "Exterior", "Protocolar") */
+.hex-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f3d06c; /* Dorado claro luminoso */
+    font-weight: 700;
+    margin-bottom: 3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Título principal de cada ambiente */
+.hex-caption h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0 18px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Contraste nítido */
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   INTERACCIÓN HOVER DE ALTA GAMA (ESTABLE Y SIN VIBRACIÓN EN BORDES)
+   ========================================================================== */
+
+/* Al pasar el cursor, intensifica el resplandor dorado sin desplazar el contenedor */
+.hex-wrapper:hover {
+    filter: drop-shadow(0 14px 24px rgba(197, 155, 39, 0.4));
+}
+
+/* Invierte la luz del marco metálico simulando reflejo de oro */
+.hex-wrapper:hover .hex-border {
+    background: linear-gradient(135deg, #f3d06c 0%, #ffffff 50%, #b8860b 100%);
+}
+
+/* Zoom suave e iluminado en la fotografía interior */
+.hex-wrapper:hover .hex-inner img {
+    transform: scale(1.1); /* Zoom fluido del 10% */
+    filter: brightness(1.05); /* Ilumina la foto al inspeccionarla */
+}
+
+/* ==========================================================================
+   ADAPTABILIDAD RESPONSIVE PARA CELULARES Y TABLETS
+   ========================================================================== */
+@media (max-width: 820px) {
+    .honeycomb-row {
+        flex-wrap: wrap; /* Permite que se acomoden en pantalla pequeña */
+        gap: 18px;
+    }
+
+    /* En celulares quitamos el encastre negativo para que no se monten las filas */
+    .honeycomb-row.row-offset {
+        margin-top: 18px;
+    }
+
+    .hex-wrapper {
+        width: 210px;
+        height: 242px;
+    }
 }
